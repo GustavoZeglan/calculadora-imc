@@ -1,8 +1,5 @@
 const h1 = document.getElementById("result");
 const btn = document.getElementById("btn");
-const t1 = document.getElementById("weight");
-const t2 = document.getElementById("height");
-
 
 btn.addEventListener("click", e => {
     handleSubmit(e);
@@ -10,14 +7,18 @@ btn.addEventListener("click", e => {
 
 function handleSubmit(e) {
     e.preventDefault();
+    h1.classList.remove("error");
     const weight = Number(document.getElementById("weight").value);
     const height = Number(document.getElementById("height").value);
 
     if (weight && height) {
         const imc = weight / Math.pow(height, 2);
-
         h1.textContent = calculateIMC(imc);
+    } else {
+        h1.textContent = "Informe valores válidos";
+        h1.classList.add("error");
     }
+
 
 }
 

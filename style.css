@@ -7,6 +7,7 @@
 :root {
     --gray-color: #333;
     --white-color: #fff;
+    --error-color: #e75555;
     --principal-font: "Arial", sans-serif;
 }
 
@@ -56,4 +57,8 @@ button {
     text-align: center;
     border-radius: 8px;
     font-size: 18px;
+}
+
+.error {
+    color: var(--error-color);
 }
